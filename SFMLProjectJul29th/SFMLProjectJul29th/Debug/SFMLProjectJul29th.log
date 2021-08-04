@@ -1,4 +1,6 @@
 ﻿  main.cpp
 D:\Users\MDS00002DS\Documents\GitHub\GD1P03-2DGPRW\SFMLProjectJul29th\SFMLProjectJul29th\main.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-  LINK : D:\Users\MDS00002DS\Documents\GitHub\GD1P03-2DGPRW\SFMLProjectJul29th\Debug\SFMLProjectJul29th.exe not found or not built by the last incremental link; performing full link
+D:\Users\MDS00002DS\Documents\GitHub\GD1P03-2DGPRW\SFMLProjectJul29th\SFMLProjectJul29th\main.cpp(32,49): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Users\MDS00002DS\Documents\GitHub\GD1P03-2DGPRW\SFMLProjectJul29th\SFMLProjectJul29th\main.cpp(32,40): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+D:\Users\MDS00002DS\Documents\GitHub\GD1P03-2DGPRW\SFMLProjectJul29th\SFMLProjectJul29th\main.cpp(79,21): warning C4018: '<': signed/unsigned mismatch
   SFMLProjectJul29th.vcxproj -> D:\Users\MDS00002DS\Documents\GitHub\GD1P03-2DGPRW\SFMLProjectJul29th\Debug\SFMLProjectJul29th.exe
