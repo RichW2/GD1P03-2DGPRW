@@ -1,4 +1,5 @@
 #include <SFML/Graphics.hpp>;
+#include <iostream>;
 
 void InputChecking(sf::RectangleShape &rect, sf::Vector2f &vect) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -53,9 +54,13 @@ int main()
 
 	shapes.push_back(&rectShape);
 
+	sf::Vector2i mousePos;
+
 	while (window.isOpen())
 	{
 		moveVector.x = 0; moveVector.y = 0;
+		mousePos = sf::Mouse::getPosition(window);
+
 		sf::Event event;
 		while (window.pollEvent(event))
 		{
@@ -72,8 +77,13 @@ int main()
 					shape.setOrigin(shape.getRadius(), shape.getRadius());
 				}
 			}
+			
 		}
 		InputChecking(rectShape, moveVector);
+
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			rectShape.setPosition(sf::Vector2f(mousePos));
+		}
 
 		window.clear();
 		for (int i = 0; i < shapes.size(); i++) {
