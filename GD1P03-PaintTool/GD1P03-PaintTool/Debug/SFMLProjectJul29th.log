@@ -2,7 +2,19 @@
   main.cpp
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(1,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(33,49): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(33,40): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(94,21): warning C4018: '<': signed/unsigned mismatch
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Canvas.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(44,64): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(44,55): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(45,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(45,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(129,74): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(129,48): warning C4244: 'argument': conversion from 'T' to 'float', possible loss of data
+          with
+          [
+              T=int
+          ]
   SFMLProjectJul29th.vcxproj -> C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\Debug\GD1P03-PaintTool.exe
