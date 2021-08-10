@@ -101,6 +101,8 @@ void Update() {
 		//mousePos = sf::Mouse::getPosition(window);
 
 		sf::Event event;
+		m_brush->SetMousePos(sf::Mouse::getPosition(*m_renderWindow));
+
 		while (m_renderWindow->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
@@ -117,17 +119,29 @@ void Update() {
 			//	}
 			//}
 
+			if (event.type == sf::Event::MouseButtonPressed) {
+				m_brush->SetStartHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
+			}
+			if (event.type == sf::Event::MouseButtonReleased) {
+				m_brush->SetEndHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
+				m_canvas->AddShape(m_brush->GetShapeWithMode());
+			}
+
+
 		}
-		m_brush->SetMousePos(sf::Mouse::getPosition(*m_renderWindow));
+		
+
+		
 
 		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+			
 			sf::Shape* testRect = new sf::RectangleShape(sf::Vector2f(20, 20));
 			m_brush->SetColour(RandomColour(cp));
 
 			testRect->setPosition(m_brush->GetMousePos().x, m_brush->GetMousePos().y);
 			m_brush->SetShape(testRect);
 
-			m_canvas->AddShape(m_brush->GetShape());
+			//m_canvas->AddShape(m_brush->GetShape());
 		}
 
 		Render();
