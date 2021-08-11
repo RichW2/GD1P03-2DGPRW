@@ -64,10 +64,15 @@ sf::Shape* Brush::GetShapeWithMode()
 	case BRUSHTYPEBOX:{
 		int xSize = abs(this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x);
 		int ySize = abs(this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y);
+		int xPo = this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x;
+		int yPo = this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y;
 		sf::Vector2f recSize = sf::Vector2f(xSize, ySize);
 		sf::Shape* newRect = new sf::RectangleShape(recSize);
-		newRect->setPosition(sf::Vector2f(this->GetStartHoldMousePos()));
+		//newRect->setOrigin(recSize.x/2, recSize.y/2);
+		newRect->setPosition(this->GetStartHoldMousePos().x + xPo, this->GetStartHoldMousePos().y + yPo);
 		newRect->setOutlineColor(this->GetColour());
+		newRect->setOutlineThickness(5);
+		newRect->setFillColor(sf::Color::Transparent);
 		return newRect;
 	}
 	default: {

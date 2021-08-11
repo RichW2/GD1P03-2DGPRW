@@ -1,15 +1,17 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Community\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(513,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFMLProjectJul29th.vcxproj).  This can lead to incorrect clean and rebuild behavior.
   Brush.cpp
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Canvas.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(67,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(69,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(67,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(69,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(77): warning C4715: 'Brush::GetShapeWithMode': not all control paths return a value
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(72,91): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(72,55): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(82): warning C4715: 'Brush::GetShapeWithMode': not all control paths return a value
   SFMLProjectJul29th.vcxproj -> C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\Debug\GD1P03-PaintTool.exe

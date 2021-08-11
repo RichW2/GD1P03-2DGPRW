@@ -141,7 +141,7 @@ void Update() {
 			testRect->setPosition(m_brush->GetMousePos().x, m_brush->GetMousePos().y);
 			m_brush->SetShape(testRect);
 
-			//m_canvas->AddShape(m_brush->GetShape());
+			m_canvas->AddShape(m_brush->GetShape());
 		}
 
 		Render();
