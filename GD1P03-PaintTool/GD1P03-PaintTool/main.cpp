@@ -1,7 +1,6 @@
-#include <SFML/Graphics.hpp>;
-#include <iostream>;
-#include "Canvas.h"
-#include "Brush.h"
+#include "PaintToolManager.h"
+
+
 
 void InputChecking(sf::RectangleShape &rect, sf::Vector2f &vect) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -26,6 +25,16 @@ void InputChecking(sf::RectangleShape &rect, sf::Vector2f &vect) {
 sf::RenderWindow* m_renderWindow;
 Canvas* m_canvas;
 Brush* m_brush;
+PaintToolManager mainManager;
+
+//make an image overlaying the whole window
+// use the mouse to set pixels of that image
+
+
+//1: make image
+//2: image = size of window
+//3: image colour
+//4: input method to get mouse position
 
 void Update();
 void Render();
@@ -44,6 +53,7 @@ int main()
 	m_renderWindow = new sf::RenderWindow (sf::VideoMode(screenW, screenH), "SFML works!");
 	m_canvas = new Canvas(m_renderWindow, screenW, screenH);
 	m_brush = new Brush(m_renderWindow, m_canvas);
+
 
 	
 
@@ -120,13 +130,15 @@ void Update() {
 			//}
 
 			if (event.type == sf::Event::MouseButtonPressed) {
-				m_brush->SetStartHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
+				if (event.mouseButton.button == sf::Mouse::Right)
+					m_brush->SetStartHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
 			}
 			if (event.type == sf::Event::MouseButtonReleased) {
-				m_brush->SetEndHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
-				m_canvas->AddShape(m_brush->GetShapeWithMode());
+				if (event.mouseButton.button == sf::Mouse::Right) {
+					m_brush->SetEndHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
+					m_canvas->AddShape(m_brush->GetShapeWithMode());
+				}
 			}
-
 
 		}
 		
@@ -138,10 +150,16 @@ void Update() {
 			sf::Shape* testRect = new sf::RectangleShape(sf::Vector2f(20, 20));
 			m_brush->SetColour(RandomColour(cp));
 
-			testRect->setPosition(m_brush->GetMousePos().x, m_brush->GetMousePos().y);
-			m_brush->SetShape(testRect);
+			//testRect->setPosition(m_brush->GetMousePos().x, m_brush->GetMousePos().y);
+			//m_brush->SetShape(testRect);
+			//
+			//m_canvas->AddShape(m_brush->GetShape());
+			m_brush->m_radius = 2;
+			m_canvas->SetPixel(m_brush->GetMousePos().x, m_brush->GetMousePos().y, m_brush->GetColour(), m_brush->m_radius);
+		}
 
-			m_canvas->AddShape(m_brush->GetShape());
+		if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
+			mainManager.OpenPaintDialog(m_brush, m_renderWindow);
 		}
 
 		Render();

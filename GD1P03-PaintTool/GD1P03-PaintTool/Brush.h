@@ -22,7 +22,7 @@ private:
 	EBRUSHTYPE m_brushMode;
 
 public:
-	
+	int m_radius;
 	Brush(sf::RenderWindow* _window, Canvas* _canvas);
 
 	void SetMousePos(sf::Vector2i pos);

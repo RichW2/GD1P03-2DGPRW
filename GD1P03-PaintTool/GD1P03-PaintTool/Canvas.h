@@ -9,6 +9,9 @@ private:
 	std::vector<sf::Shape*> m_shapes;
 	sf::RenderWindow* m_rendWindow;
 	sf::RectangleShape m_background;
+	sf::Image m_bgImage;
+	sf::Texture m_bgTexture;
+	sf::Sprite m_bgSprite;
 	int m_width = 400;
 	int m_height = 400;
 
@@ -20,6 +23,7 @@ public:
 	int GetWidth();
 	int GetHeight();
 
+	void SetPixel(int x, int y, sf::Color col, int rad);
 	void AddShape(sf::Shape* newShape);
 
 	void Draw();
