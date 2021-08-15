@@ -1,12 +1,31 @@
 #include "Brush.h"
 
+float GetAngle2Points(float _x1, float _y1, float _x2, float _y2) {
+	float angle;
+	float pi = 3.14159;
+	angle = atan2(_y2 - _y1, _x2 - _x1) * (180/pi);
+	return angle;
+}
+
+float GetAngle2Lines(float _x, float _y) {
+	float angle;
+	float pi = 3.14159;
+	angle = atan2(_y, _x) * (180 / pi);
+	return angle;
+}
+
+float PythagLines(float _x, float _y) {
+	return sqrtf(_x * _x + _y * _y);
+}
+
 Brush::Brush(sf::RenderWindow* _window, Canvas* _canvas)
 {
 	m_rendWindow = _window;
 	m_canvas = _canvas;
 	m_brushMode = BRUSHTYPEBOX;
-}
+	m_radius = 2;
 
+}
 
 void Brush::SetMousePos(sf::Vector2i pos)
 {
@@ -58,25 +77,52 @@ void Brush::SetMode(EBRUSHTYPE _type)
 	m_brushMode = _type;
 }
 
+EBRUSHTYPE Brush::GetMode()
+{
+	return m_brushMode;
+}
+
 sf::Shape* Brush::GetShapeWithMode()
 {
+	int xSize = abs(this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x);
+	int ySize = abs(this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y);
+	int xPo = (this->GetEndHoldMousePos().x + this->GetStartHoldMousePos().x) / 2;
+	int yPo = (this->GetEndHoldMousePos().y + this->GetStartHoldMousePos().y) / 2;
+
 	switch (m_brushMode) {
+	default:
 	case BRUSHTYPEBOX:{
-		int xSize = abs(this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x);
-		int ySize = abs(this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y);
-		int xPo = this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x;
-		int yPo = this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y;
+		
 		sf::Vector2f recSize = sf::Vector2f(xSize, ySize);
 		sf::Shape* newRect = new sf::RectangleShape(recSize);
-		//newRect->setOrigin(recSize.x/2, recSize.y/2);
-		newRect->setPosition(this->GetStartHoldMousePos().x + xPo, this->GetStartHoldMousePos().y + yPo);
+		newRect->setOrigin(recSize.x/2, recSize.y/2);
+		newRect->setPosition(xPo, yPo);
 		newRect->setOutlineColor(this->GetColour());
 		newRect->setOutlineThickness(5);
 		newRect->setFillColor(sf::Color::Transparent);
 		return newRect;
 	}
-	default: {
-
+	case BRUSHTYPEELLIPSES: {
+		sf::Vector2f shapeSiz = sf::Vector2f(xSize, ySize);
+		sf::Shape* newElip = new sf::CircleShape();
+		newElip->setOrigin(shapeSiz.x / 2, shapeSiz.y / 2);
+		newElip->setPosition(xPo, yPo);
+		newElip->setOutlineColor(this->GetColour());
+		newElip->setOutlineThickness(5);
+		newElip->setFillColor(sf::Color::Transparent);
+		return newElip;
+	}
+	case BRUSHTYPELINE: {
+		sf::Vector2f recSize = sf::Vector2f(PythagLines(xSize, ySize), m_radius);
+		sf::Shape* newRect = new sf::RectangleShape(recSize);
+		float angle= GetAngle2Lines(this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x, this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y);
+		newRect->setOrigin(recSize.x / 2, recSize.y / 2);
+		newRect->setPosition(xPo, yPo);
+		newRect->rotate(angle);
+		newRect->setOutlineColor(this->GetColour());
+		newRect->setOutlineThickness(0);
+		newRect->setFillColor(this->GetColour());
+		return newRect;
 	}
 	}
 }

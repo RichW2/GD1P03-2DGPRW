@@ -39,6 +39,7 @@ public:
 	sf::Shape* GetNewShape();
 
 	void SetMode(EBRUSHTYPE _type);
+	EBRUSHTYPE GetMode();
 	sf::Shape* GetShapeWithMode();
 
 	sf::Color GetColour();

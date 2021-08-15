@@ -2,9 +2,13 @@
 #include <SFML/Graphics.hpp>;
 #include <iostream>;
 #include <Windows.h>
+#include <stdlib.h>
+#include <time.h>
 #include <wingdi.h> //required for colour handler
 #include "Canvas.h"
 #include "Brush.h"
+#include "Button.h"
+#include "ToolsCanvas.h"
 
 class PaintToolManager
 {

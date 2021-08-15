@@ -1,6 +1,5 @@
 #pragma once
 #include <SFML/Graphics.hpp>;
-#include <list>
 
 class Canvas
 {
@@ -10,6 +9,7 @@ private:
 	sf::RenderWindow* m_rendWindow;
 	sf::RectangleShape m_background;
 	sf::Image m_bgImage;
+	sf::Image* m_currentBGImage;
 	sf::Texture m_bgTexture;
 	sf::Sprite m_bgSprite;
 	int m_width = 400;
@@ -25,6 +25,9 @@ public:
 
 	void SetPixel(int x, int y, sf::Color col, int rad);
 	void AddShape(sf::Shape* newShape);
+	void PopShape();
+	void AddNewImage();
+	void ResizeBGImage(int newX, int newY);
 
 	void Draw();
 

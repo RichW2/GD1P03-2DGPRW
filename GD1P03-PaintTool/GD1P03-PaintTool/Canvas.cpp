@@ -46,8 +46,8 @@ int Canvas::GetHeight()
 
 void Canvas::SetPixel(int x, int y, sf::Color col, int rad)
 {
-	for (int i = -rad; i < rad; i++) {
-		for (int j = -rad; j < rad; j++) {
+	for (int i = -rad/2; i < rad/2; i++) {
+		for (int j = -rad/2; j < rad/2; j++) {
 
 			m_bgImage.setPixel(x + i, y+j, col);
 		}
@@ -60,6 +60,24 @@ void Canvas::SetPixel(int x, int y, sf::Color col, int rad)
 void Canvas::AddShape(sf::Shape* newShape)
 {
 	m_shapes.push_back(newShape);
+}
+
+void Canvas::PopShape()
+{
+	delete m_shapes.back(); //remove last shape from memory
+	m_shapes.pop_back(); //remove last position
+}
+
+void Canvas::AddNewImage()
+{
+	m_bgImage.create(GetHeight(), GetHeight(), sf::Color(255, 255, 255, 0));
+	m_bgTexture.loadFromImage(m_bgImage);
+	m_bgSprite.setTexture(m_bgTexture);
+}
+
+void Canvas::ResizeBGImage(int newX, int newY)
+{
+
 }
 
 void Canvas::Draw()
