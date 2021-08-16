@@ -60,7 +60,7 @@ int main()
 	m_canvas = new Canvas(m_renderWindow, screenW, screenH);
 	m_toolsCanvas = new ToolsCanvas(m_toolsWindow);
 	m_brush = new Brush(m_renderWindow, m_canvas);
-	m_brush->SetMode(BRUSHTYPEDRAW);
+	m_brush->SetMode(BRUSHTYPEELLIPSES);
 
 	SetupToolbar();
 
@@ -180,9 +180,9 @@ void Update() {
 			
 			switch (m_brush->GetMode()) {
 			case BRUSHTYPEDRAW: {
-				m_brush->m_radius = 2;
+				m_brush->m_radius = 8;
 				if (m_brush->GetMousePos().x > 0 && m_brush->GetMousePos().y > 0 && m_brush->GetMousePos().x < m_canvas->GetWidth() && m_brush->GetMousePos().y < m_canvas->GetHeight())
-					m_canvas->SetPixel(m_brush->GetMousePos().x, m_brush->GetMousePos().y, m_brush->GetColour(), m_brush->m_radius);
+					m_canvas->SetPixel(m_brush->GetMousePos().x, m_brush->GetMousePos().y, m_brush->GetColour(), m_brush->m_radius); //need to take into account brush radius
 				break;
 			}
 			default:

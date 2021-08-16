@@ -86,6 +86,8 @@ sf::Shape* Brush::GetShapeWithMode()
 {
 	int xSize = abs(this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x);
 	int ySize = abs(this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y);
+	int xSizeN = this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x;
+	int ySizeN = this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y;
 	int xPo = (this->GetEndHoldMousePos().x + this->GetStartHoldMousePos().x) / 2;
 	int yPo = (this->GetEndHoldMousePos().y + this->GetStartHoldMousePos().y) / 2;
 
@@ -104,9 +106,13 @@ sf::Shape* Brush::GetShapeWithMode()
 	}
 	case BRUSHTYPEELLIPSES: {
 		sf::Vector2f shapeSiz = sf::Vector2f(xSize, ySize);
-		sf::Shape* newElip = new sf::CircleShape();
+		float rad = shapeSiz.y / 2;
+		sf::Shape* newElip = new sf::CircleShape(rad);
 		newElip->setOrigin(shapeSiz.x / 2, shapeSiz.y / 2);
 		newElip->setPosition(xPo, yPo);
+		float xScal = (xSizeN/rad/2);
+		float yScal = (ySizeN/rad/2);
+		newElip->setScale(xScal, yScal);
 		newElip->setOutlineColor(this->GetColour());
 		newElip->setOutlineThickness(5);
 		newElip->setFillColor(sf::Color::Transparent);
@@ -115,7 +121,7 @@ sf::Shape* Brush::GetShapeWithMode()
 	case BRUSHTYPELINE: {
 		sf::Vector2f recSize = sf::Vector2f(PythagLines(xSize, ySize), m_radius);
 		sf::Shape* newRect = new sf::RectangleShape(recSize);
-		float angle= GetAngle2Lines(this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x, this->GetEndHoldMousePos().y - this->GetStartHoldMousePos().y);
+		float angle= GetAngle2Lines(xSizeN, ySizeN);
 		newRect->setOrigin(recSize.x / 2, recSize.y / 2);
 		newRect->setPosition(xPo, yPo);
 		newRect->rotate(angle);
