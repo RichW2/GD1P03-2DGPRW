@@ -7,27 +7,25 @@ C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\ToolsCanvas.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(58,64): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(58,55): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(59,74): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(59,61): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(60,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(60,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
 C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(67,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(162,72): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,72): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(162,51): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,51): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(162,118): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,118): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float
           ]
-C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(162,100): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
+C:\Users\GGPC\Documents\GitHub\GD1P03-PaintRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,100): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
           with
           [
               T=float

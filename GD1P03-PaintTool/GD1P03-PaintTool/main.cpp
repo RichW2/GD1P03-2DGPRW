@@ -56,7 +56,7 @@ int main()
 	float screenW = 1000;
 	float screenH = 800;
 	m_renderWindow = new sf::RenderWindow (sf::VideoMode(screenW, screenH), "SFML works!");
-	m_toolsWindow = new sf::RenderWindow(sf::VideoMode(screenW / 4, screenH / 2), "Tools");
+	m_toolsWindow = new sf::RenderWindow(sf::VideoMode(250, 400), "Tools");
 	m_canvas = new Canvas(m_renderWindow, screenW, screenH);
 	m_toolsCanvas = new ToolsCanvas(m_toolsWindow);
 	m_brush = new Brush(m_renderWindow, m_canvas);
@@ -85,27 +85,30 @@ void Update() {
 		//mousePos = sf::Mouse::getPosition(window);
 
 		sf::Event event;
-		m_brush->SetMousePos(sf::Mouse::getPosition(*m_renderWindow));
+		
+		m_brush->SetMousePos(sf::Mouse::getPosition(*m_toolsWindow));
+		while (m_toolsWindow->pollEvent(event)) {
+			if (event.type == sf::Event::MouseButtonPressed) {
 
+				m_brush->SetStartHoldMousePos(sf::Mouse::getPosition(*m_toolsWindow));
+				//if (event.mouseButton.button == sf::Mouse::Right)
+
+				Button* buttonUnderMouse = m_toolsCanvas->IsMouseOverButton(m_brush->GetStartHoldMousePos());
+				if (buttonUnderMouse != nullptr) {
+					buttonUnderMouse->UseButton();
+				}
+
+			}
+		}
+
+		m_brush->SetMousePos(sf::Mouse::getPosition(*m_renderWindow));
 		while (m_renderWindow->pollEvent(event))
 		{
 			if (event.type == sf::Event::Closed)
 				m_renderWindow->close();
-			//if (event.type == sf::Event::KeyPressed) {
-			//
-			//	if (event.key.code == sf::Keyboard::A) {
-			//		shape.setRadius(shape.getRadius() + 1);
-			//		shape.setOrigin(shape.getRadius(), shape.getRadius());
-			//	}
-			//	if (event.key.code == sf::Keyboard::D) {
-			//		shape.setRadius(shape.getRadius() - 1);
-			//		shape.setOrigin(shape.getRadius(), shape.getRadius());
-			//	}
-			//}
 
 			if (event.type == sf::Event::MouseButtonPressed) {
 				m_brush->SetStartHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
-				//if (event.mouseButton.button == sf::Mouse::Right)
 					
 				switch (m_brush->GetMode()) {
 				case BRUSHTYPEDRAW: {
@@ -245,6 +248,6 @@ sf::Color RandomColour() {
 }
 
 void SetupToolbar() {
-	m_toolsCanvas->AddButton(new Button(10, 10, 30, 30, BUTTONUSE_COLOURPICKER));
+	m_toolsCanvas->AddButton(new Button(10, 10, 30, 30, BUTTONUSE_COLOURPICKER, m_brush, m_canvas));
 }
 
