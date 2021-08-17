@@ -23,6 +23,8 @@ public:
 	int GetWidth();
 	int GetHeight();
 
+	sf::RenderWindow* GetRenderWindow();
+
 	void SetPixel(int x, int y, sf::Color col, int rad);
 	void AddShape(sf::Shape* newShape);
 	void PopShape();

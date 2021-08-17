@@ -4,7 +4,7 @@
 #include "Brush.h"
 #include "Canvas.h"
 #include <iostream>
-//#include "PaintToolManager.h"
+#include "PaintToolManager.h"
 
 enum EBUTTONUSE {
 	BUTTONUSE_BRUSHBIGGER,
@@ -15,7 +15,7 @@ enum EBUTTONUSE {
 class Button
 {
 public:
-	Button(int xPos, int yPos, float xSiz, float ySiz, EBUTTONUSE _buttonUse, Brush* _brush, Canvas* _canvas);
+	Button(int xPos, int yPos, float xSiz, float ySiz, EBUTTONUSE _buttonUse, Brush* _brush, Canvas* _canvas, PaintToolManager* _manager);
 
 	void UseButton();
 
@@ -30,5 +30,6 @@ public:
 	//PaintToolManager* m_paintManager;
 	Brush* m_brush;
 	Canvas* m_canvas;
+	PaintToolManager* m_manager;
 };
 

@@ -100,23 +100,23 @@ sf::Shape* Brush::GetShapeWithMode()
 		newRect->setOrigin(recSize.x/2, recSize.y/2);
 		newRect->setPosition(xPo, yPo);
 		newRect->setOutlineColor(this->GetColour());
-		newRect->setOutlineThickness(5);
+		newRect->setOutlineThickness(this->m_radius);
 		newRect->setFillColor(sf::Color::Transparent);
 		return newRect;
 	}
 	case BRUSHTYPEELLIPSES: {
 		sf::Vector2f shapeSiz = sf::Vector2f(xSize, ySize);
-		float rad = shapeSiz.y / 2;
+		float rad = ySizeN / 2;
 		sf::Shape* newElip = new sf::CircleShape(rad);
 		
-		float xScal = ((float)xSizeN/ (float)xPo);
-		float yScal = ((float)ySizeN / (float)yPo);
+		float xScal = (this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x)/rad/2;
+		float yScal = 1;
 		newElip->setScale(xScal, yScal);
 
-		newElip->setOrigin(shapeSiz.x / 2, shapeSiz.y / 2);
-		newElip->setPosition(xPo, yPo);
+		//newElip->setOrigin(shapeSiz.x / 2, shapeSiz.y / 2);
+		newElip->setPosition(this->GetStartHoldMousePos().x, this->GetStartHoldMousePos().y);
 		newElip->setOutlineColor(this->GetColour());
-		newElip->setOutlineThickness(5);
+		newElip->setOutlineThickness(this->m_radius);
 		newElip->setFillColor(sf::Color::Transparent);
 		return newElip;
 	}

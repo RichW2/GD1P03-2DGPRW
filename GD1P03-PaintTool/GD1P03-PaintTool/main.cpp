@@ -1,6 +1,8 @@
 #include "PaintToolManager.h"
-
-
+#include "Canvas.h"
+#include "Brush.h"
+#include "ToolsCanvas.h"
+#include "Button.h"
 
 void InputChecking(sf::RectangleShape &rect, sf::Vector2f &vect) {
 	if (sf::Keyboard::isKeyPressed(sf::Keyboard::Left)) {
@@ -29,7 +31,7 @@ sf::RenderWindow* m_toolsWindow;
 ToolsCanvas* m_toolsCanvas;
 
 Brush* m_brush;
-PaintToolManager mainManager;
+PaintToolManager m_manager;
 
 //make an image overlaying the whole window
 // use the mouse to set pixels of that image
@@ -107,7 +109,7 @@ void Update() {
 			if (event.type == sf::Event::Closed)
 				m_renderWindow->close();
 
-			if (event.type == sf::Event::MouseButtonPressed) {
+			if (event.type == sf::Event::MouseButtonPressed && event.mouseButton.button == sf::Mouse::Left) {
 				m_brush->SetStartHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
 					
 				switch (m_brush->GetMode()) {
@@ -132,7 +134,7 @@ void Update() {
 				}
 				}
 			}
-			if (event.type == sf::Event::MouseButtonReleased) {
+			if (event.type == sf::Event::MouseButtonReleased && event.mouseButton.button == sf::Mouse::Left) {
 				//if (event.mouseButton.button == sf::Mouse::Right) {
 				//	m_brush->SetEndHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
 				//	m_canvas->AddShape(m_brush->GetShapeWithMode());
@@ -171,11 +173,11 @@ void Update() {
 
 		
 
-		if (sf::Mouse::isButtonPressed(sf::Mouse::Left)) {
+		if (sf::Mouse::isButtonPressed(sf::Mouse::Left) && m_renderWindow->hasFocus()) {
 			//delete most recently created shape
 			// create shape
 
-			m_brush->SetColour(RandomColour());
+			//m_brush->SetColour(RandomColour());
 			m_brush->SetEndHoldMousePos(sf::Mouse::getPosition(*m_renderWindow));
 			
 			switch (m_brush->GetMode()) {
@@ -202,22 +204,10 @@ void Update() {
 				break;
 			}
 			}
-
-
-			//sf::Shape* testRect = new sf::RectangleShape(sf::Vector2f(20, 20));
-			
-
-			//testRect->setPosition(m_brush->GetMousePos().x, m_brush->GetMousePos().y);
-			//m_brush->SetShape(testRect);
-			//
-			//m_canvas->AddShape(m_brush->GetShape());
-			
-
-			//m_renderWindow->setSize(sf::Vector2u(m_renderWindow->getSize().x - 1, m_renderWindow->getSize().y));
 		}
 
 		if (sf::Keyboard::isKeyPressed(sf::Keyboard::P)) {
-			mainManager.OpenPaintDialog(m_brush, m_renderWindow);
+			m_manager.OpenPaintDialog(m_brush, m_renderWindow);
 		}
 
 		Render();
@@ -248,6 +238,6 @@ sf::Color RandomColour() {
 }
 
 void SetupToolbar() {
-	m_toolsCanvas->AddButton(new Button(10, 10, 30, 30, BUTTONUSE_COLOURPICKER, m_brush, m_canvas));
+	m_toolsCanvas->AddButton(new Button(10, 10, 30, 30, BUTTONUSE_COLOURPICKER, m_brush, m_canvas, &m_manager));
 }
 

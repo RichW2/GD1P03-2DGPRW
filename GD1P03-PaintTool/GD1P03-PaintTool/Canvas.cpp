@@ -1,12 +1,4 @@
 #include "Canvas.h"
-#include <SFML/Graphics.hpp>;
-
-
-//Canvas::Canvas(int _width, int _height)
-//{
-//	
-//	//sf::RenderWindow m_Window(sf::VideoMode(m_width, m_height), "A basic canvas");
-//}
 
 Canvas::Canvas(sf::RenderWindow* _window, int _width, int _height)
 {
@@ -42,6 +34,11 @@ int Canvas::GetWidth()
 int Canvas::GetHeight()
 {
 	return m_height;
+}
+
+sf::RenderWindow* Canvas::GetRenderWindow()
+{
+	return m_rendWindow;
 }
 
 void Canvas::SetPixel(int x, int y, sf::Color col, int rad)
