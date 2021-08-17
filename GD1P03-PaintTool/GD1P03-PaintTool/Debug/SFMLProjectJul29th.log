@@ -1,33 +1,41 @@
 ﻿C:\Program Files (x86)\Microsoft Visual Studio\2019\Professional\MSBuild\Microsoft\VC\v160\Microsoft.CppBuild.targets(452,5): warning MSB8028: The intermediate directory (Debug\) contains files shared from another project (SFMLProjectJul29th.vcxproj).  This can lead to incorrect clean and rebuild behavior.
-  main.cpp
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\PaintToolManager.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\PaintToolManager.h(3,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
+  Brush.cpp
 D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Canvas.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Button.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\ToolsCanvas.h(2,10): warning C4067: unexpected tokens following preprocessor directive - expected a newline
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(58,64): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(58,55): warning C4244: 'argument': conversion from 'float' to 'unsigned int', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(60,49): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(60,40): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(67,12): warning C4244: 'argument': conversion from 'time_t' to 'unsigned int', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,72): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,72): warning C4244:         with
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,72): warning C4244:         [
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,72): warning C4244:             T=float
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,72): warning C4244:         ]
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,51): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,51): warning C4244:         with
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,51): warning C4244:         [
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,51): warning C4244:             T=float
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,51): warning C4244:         ]
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,118): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,118): warning C4244:         with
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,118): warning C4244:         [
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,118): warning C4244:             T=float
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,118): warning C4244:         ]
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,100): warning C4244: 'argument': conversion from 'unsigned int' to 'T', possible loss of data
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,100): warning C4244:         with
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,100): warning C4244:         [
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,100): warning C4244:             T=float
-D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\main.cpp(165,100): warning C4244:         ]
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(5,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(12,20): warning C4305: 'initializing': truncation from 'double' to 'float'
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,46): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,46): warning C4244:         with
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,46): warning C4244:         [
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,46): warning C4244:             T=float
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,46): warning C4244:         ]
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,39): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,39): warning C4244:         with
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,39): warning C4244:         [
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,39): warning C4244:             T=float
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(98,39): warning C4244:         ]
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(101,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(101,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,47): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,47): warning C4244:         with
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,47): warning C4244:         [
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,47): warning C4244:             T=float
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,47): warning C4244:         ]
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,40): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,40): warning C4244:         with
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,40): warning C4244:         [
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,40): warning C4244:             T=float
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(108,40): warning C4244:         ]
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(117,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(117,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(124,58): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(124,51): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(124,66): warning C4244: 'argument': conversion from 'int' to 'T', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(124,66): warning C4244:         with
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(124,66): warning C4244:         [
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(124,66): warning C4244:             T=float
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(124,66): warning C4244:         ]
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(126,39): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(126,31): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(128,29): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\GD1P03-PaintTool\Brush.cpp(128,24): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
   SFMLProjectJul29th.vcxproj -> D:\Users\mds00002ds\Documents\GitHub\GD1P03-2DGPRW\GD1P03-PaintTool\Debug\GD1P03-PaintTool.exe

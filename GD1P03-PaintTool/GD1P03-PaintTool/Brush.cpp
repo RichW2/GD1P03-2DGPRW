@@ -108,11 +108,13 @@ sf::Shape* Brush::GetShapeWithMode()
 		sf::Vector2f shapeSiz = sf::Vector2f(xSize, ySize);
 		float rad = shapeSiz.y / 2;
 		sf::Shape* newElip = new sf::CircleShape(rad);
+		
+		float xScal = ((float)xSizeN/ (float)xPo);
+		float yScal = ((float)ySizeN / (float)yPo);
+		newElip->setScale(xScal, yScal);
+
 		newElip->setOrigin(shapeSiz.x / 2, shapeSiz.y / 2);
 		newElip->setPosition(xPo, yPo);
-		float xScal = (xSizeN/rad/2);
-		float yScal = (ySizeN/rad/2);
-		newElip->setScale(xScal, yScal);
 		newElip->setOutlineColor(this->GetColour());
 		newElip->setOutlineThickness(5);
 		newElip->setFillColor(sf::Color::Transparent);
