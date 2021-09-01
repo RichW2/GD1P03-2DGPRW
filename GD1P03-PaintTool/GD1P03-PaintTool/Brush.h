@@ -6,6 +6,8 @@ enum EBRUSHTYPE {
 	BRUSHTYPEBOX,
 	BRUSHTYPELINE,
 	BRUSHTYPEELLIPSES,
+	BRUSHTYPEPOLYGON,
+	BRUSHTYPEIMAGE
 };
 
 class Brush
@@ -20,9 +22,12 @@ private:
 	sf::Shape* m_selectedShape;
 	sf::Color m_brushColour;
 	EBRUSHTYPE m_brushMode;
+	int m_radius;
+	int m_polygonSides;
 
 public:
-	int m_radius;
+	bool rainbowColourMode;
+	sf::Image m_bitmapImg;
 	Brush(sf::RenderWindow* _window, Canvas* _canvas);
 
 	void SetMousePos(sf::Vector2i pos);
@@ -42,8 +47,15 @@ public:
 	EBRUSHTYPE GetMode();
 	sf::Shape* GetShapeWithMode();
 
+	void IncreaseRadius(int val);
+	int GetRadius();
+
+	void IncreasePolySides(int val);
+	int GetPolySides();
+
 	sf::Color GetColour();
 	void SetColour(sf::Color _colour);
+	sf::Color RandomColour();
 
 };
 

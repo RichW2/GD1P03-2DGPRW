@@ -14,6 +14,9 @@ public:
 	void AddButton(Button* newButton);
 
 	Button* IsMouseOverButton(sf::Vector2i mousePos);
+	void HighlightButton(Button* theButton);
+
+	Button* GetLastButton();
 
 	void Draw();
 };

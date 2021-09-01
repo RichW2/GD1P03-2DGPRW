@@ -24,7 +24,7 @@ Brush::Brush(sf::RenderWindow* _window, Canvas* _canvas)
 	m_canvas = _canvas;
 	m_brushMode = BRUSHTYPEBOX;
 	m_radius = 2;
-
+	m_polygonSides = 5;
 }
 
 void Brush::SetMousePos(sf::Vector2i pos)
@@ -132,17 +132,66 @@ sf::Shape* Brush::GetShapeWithMode()
 		newRect->setFillColor(this->GetColour());
 		return newRect;
 	}
+	case BRUSHTYPEPOLYGON: {
+		sf::Vector2f shapeSiz = sf::Vector2f(xSize, ySize);
+		float rad = ySizeN / 2;
+		sf::Shape* newElip = new sf::CircleShape(rad);
+
+		float xScal = (this->GetEndHoldMousePos().x - this->GetStartHoldMousePos().x) / rad / 2;
+		float yScal = 1;
+		newElip->setScale(xScal, yScal);
+		dynamic_cast<sf::CircleShape*>(newElip)->setPointCount(this->GetPolySides());
+
+		newElip->setPosition(this->GetStartHoldMousePos().x, this->GetStartHoldMousePos().y);
+		newElip->setOutlineColor(this->GetColour());
+		newElip->setOutlineThickness(this->m_radius);
+		newElip->setFillColor(sf::Color::Transparent);
+		return newElip;
 	}
+	}
+}
+
+void Brush::IncreaseRadius(int val)
+{
+	m_radius += val;
+	if (m_radius < 2)
+		m_radius = 2;
+	if (m_radius > 20)
+		m_radius = 20;
+}
+
+int Brush::GetRadius()
+{
+	return m_radius;
+}
+
+void Brush::IncreasePolySides(int val)
+{
+	m_polygonSides += val;
+	if (m_polygonSides > 20)
+		m_polygonSides = 20;
+	if (m_polygonSides < 3)
+		m_polygonSides = 3;
+}
+
+int Brush::GetPolySides()
+{
+	return m_polygonSides;
 }
 
 
 sf::Color Brush::GetColour()
 {
+	if (rainbowColourMode)
+		return RandomColour();
 	return m_brushColour;
 }
 void Brush::SetColour(sf::Color _colour)
 {
 	m_brushColour = _colour;
 }
-
+sf::Color Brush::RandomColour()
+{
+	return sf::Color(rand() % 255, rand() % 255, rand() % 255, 255);
+}
 

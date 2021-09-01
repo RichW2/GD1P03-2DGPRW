@@ -23,10 +23,27 @@ Button* ToolsCanvas::IsMouseOverButton(sf::Vector2i mp)
 	return nullptr;
 }
 
+void ToolsCanvas::HighlightButton(Button* theButton)
+{
+	if (theButton->buttonUse == BUTTONUSE_BRUSHBOX || theButton->buttonUse == BUTTONUSE_BRUSHDRAW || theButton->buttonUse == BUTTONUSE_BRUSHELLIPSE || theButton->buttonUse == BUTTONUSE_BRUSHLINE || theButton->buttonUse == BUTTONUSE_BRUSHPOLYGON || theButton->buttonUse == BUTTONUSE_STAR || theButton->buttonUse == BUTTONUSE_HEART)
+	{ //unhilights all other drawmode buttons
+		for (int i = 0; i < allButtons.size(); i++) {
+			if (allButtons[i]->buttonUse != BUTTONUSE_RAINBOWMODE)
+				allButtons[i]->DimButton(0);
+		}
+		theButton->DimButton(100);
+	}
+}
+
+Button* ToolsCanvas::GetLastButton()
+{
+	return allButtons.back();
+}
+
 void ToolsCanvas::Draw()
 {
-	m_toolsWindow->clear();
+	m_toolsWindow->clear(sf::Color(200, 200, 200,255)); //set the tool canvas background to a nice grey colour
 	for (int i = 0; i < allButtons.size(); i++) {
-		allButtons[i]->DisplayButton(m_toolsWindow);
+		allButtons[i]->DisplayButton(m_toolsWindow); //show all buttons 
 	}
 }

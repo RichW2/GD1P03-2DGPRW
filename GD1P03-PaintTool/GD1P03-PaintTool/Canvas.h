@@ -7,7 +7,6 @@ private:
 	//std::list<sf::Shape*> m_shapes;
 	std::vector<sf::Shape*> m_shapes;
 	sf::RenderWindow* m_rendWindow;
-	sf::RectangleShape m_background;
 	sf::Image m_bgImage;
 	sf::Image* m_currentBGImage;
 	sf::Texture m_bgTexture;
@@ -24,16 +23,23 @@ public:
 	int GetHeight();
 
 	sf::RenderWindow* GetRenderWindow();
+	void ResetImageColour(sf::Color newCol);
 
 	void SetPixel(int x, int y, sf::Color col, int rad);
+	void SetPixel(int x, int y, sf::Color col, sf::Image img);
 	void AddShape(sf::Shape* newShape);
 	void PopShape();
-	void AddNewImage();
+	void UndoShape();
+	void AddNewImage(sf::Color newCol);
+	sf::Image* GetImage();
+	sf::Texture* GetTexture();
+	sf::Sprite* GetSprite();
 	void ResizeBGImage(int newX, int newY);
 
 	void Draw();
 
-
+	void Save(const std::string& filename);
+	void Load();
 	
 };
 
